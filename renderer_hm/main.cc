@@ -39,11 +39,11 @@ int main(int argc, char** argv){
 
 void parseArgs(int argc, char** argv) {
 
-	kShaderDir_ = "../src/shaders";
+	// kShaderDir_ = "../src/shaders";
 	kObjPath = std::string(argv[1]);
 	kNrmPath = std::string(argv[2]);
-	if(argc>3)
-		kShaderDir_ = argv[3];
+	// if(argc>3)
+    kShaderDir_ = argv[3];
 }
 
 
