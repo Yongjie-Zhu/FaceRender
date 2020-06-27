@@ -32,19 +32,6 @@ set(GLAD_DIR "${CMAKE_SOURCE_DIR}/mythirds/glad")
 add_library("glad" "${GLAD_DIR}/src/glad.c")
 target_include_directories("glad" PRIVATE "${GLAD_DIR}/include")
 
-# doxgen
-include(UseDoxygenDoc)
-add_doxygen_doc(
-  BUILD_DIR
-    ${CMAKE_CURRENT_BINARY_DIR}/_build
-  DOXY_FILE
-    ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in
-  TARGET_NAME
-    docs
-  COMMENT
-    "HTML documentation"
-  )
-
 include_directories(includes)
 include_directories(${PROJECT_SOURCE_DIR})
 
@@ -57,4 +44,16 @@ file(GLOB_RECURSE FaceRenderer_Headers
 
 add_subdirectory(renderer_hm)
 
+# doxgen
+include(UseDoxygenDoc)
+add_doxygen_doc(
+  BUILD_DIR
+    ${CMAKE_CURRENT_BINARY_DIR}/_build
+  DOXY_FILE
+    ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in
+  TARGET_NAME
+    docs
+  COMMENT
+    "HTML documentation"
+  )
 
